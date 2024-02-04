@@ -10,19 +10,22 @@ public class Controller : MonoBehaviour
     float horizontal;
     float vertical;
     public int maxInventorySpace = 5;
-    public int intitialTrash = 0;
+    public bool isShelfShowing = false;
     public float maxHealth = 1;
     private float currentHealth = 1 ;
-    int currentTrash;
+    private int currentTrash;
     Timer mytimer = new Timer(2000);
 
-
+    private void Awake()
+    {
+        inventory = new Inventory();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        inventory = new Inventory();
+        InventoryShelf.instance.hide();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        currentTrash= intitialTrash;
+        currentTrash= 0;
     }
 
     // Update is called once per frame
@@ -30,6 +33,20 @@ public class Controller : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        // when I is pressed the turtle Opens their inventory
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (isShelfShowing)
+            {
+                InventoryShelf.instance.hide();
+                isShelfShowing = false;
+            }
+            else
+            {
+                InventoryShelf.instance.show(inventory);
+                isShelfShowing = true;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -40,16 +57,22 @@ public class Controller : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
-
+    public void consumeFood()
+    {
+        changeHealth(45f);
+    }
+    public void consumeTrash()
+    {
+        changeHealth(-0.15f);
+    }
+    // Needed? 
     public void incrementTrash()
     {
         currentTrash++;
-        changeHealth(-0.15f);
     }
 
     public void addToInventory(Item item)
     {
-
         inventory.add(item);
     }
 
