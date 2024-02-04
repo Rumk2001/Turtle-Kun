@@ -17,7 +17,6 @@ public class trashCollectible : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E key was pressed");
             if (controller != null)
             {
                 controller.incrementTrash();
@@ -28,7 +27,6 @@ public class trashCollectible : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log("F key was pressed");
             if (controller != null)
             {
                 controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass"));
@@ -39,24 +37,10 @@ public class trashCollectible : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collided)
     {
         controller = collided.GetComponent<Controller>();
-                if (controller != null)
-        {
-            Debug.Log("collision");
-
-
-            }
-
-        }
+    }
     void OnTriggerExit2D(Collider2D collided)
     {
         controller = null;
-  
-        
-            Debug.Log("exit");
-
-
-        
-
     }
 
 }

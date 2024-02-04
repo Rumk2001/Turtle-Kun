@@ -22,7 +22,6 @@ public class Inventory
             { items[itemToAdd]++; }
             else
                 items.Add(itemToAdd, 1);
-            Debug.Log(items.GetValueOrDefault(itemToAdd));
         }
         //TODO: send a message if inventory is full
         else { return; }

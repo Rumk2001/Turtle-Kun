@@ -43,28 +43,19 @@ public class Controller : MonoBehaviour
     public void incrementTrash()
     {
         currentTrash++;
-        Debug.Log(currentTrash);
         changeHealth(-0.15f);
     }
 
     public void addToInventory(Item item)
     {
 
-        Debug.Log(currentTrash);
-        Debug.Log(item);
         inventory.add(item);
-        Debug.Log(inventory);
     }
 
     public void changeHealth(float change)
     {
-        Debug.Log(currentHealth);
         currentHealth = currentHealth + change; //Mathf.Clamp(currentHealth + change, 0, maxHealth);
-        Debug.Log(currentHealth);
-        Debug.Log("Tities");
         HealthBar.instance.SetValue(currentHealth);
-        Debug.Log(change);
-        Debug.Log(currentHealth);
     }
 
 }

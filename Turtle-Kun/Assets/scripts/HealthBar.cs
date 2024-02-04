@@ -18,7 +18,6 @@ public class HealthBar : MonoBehaviour
     private float change = 2f;
     void Awake()
     {
-        Debug.Log("SHit");
         instance = this;
         // Timer mytimer = new Timer(2000);
         // mytimer.Elapsed += (sender, e) => SetValue(change);
@@ -27,8 +26,6 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("HEre");
-        Debug.Log(mask);
         originalSize = mask.rectTransform.rect.width;
         //Timer mytimer = new Timer(2000);
         //mytimer.Elapsed += (sender, e) => SetValue(change);
@@ -37,8 +34,6 @@ public class HealthBar : MonoBehaviour
 
     public void SetValue(float value)
     {
-        Debug.Log("FUck");
-        Debug.Log(value);
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * value);
     }
 
