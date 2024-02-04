@@ -5,23 +5,23 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     Inventory inventory;
-
+    // HealthBar hunger;
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
     public int maxInventorySpace = 5;
     public int intitialTrash = 0;
-    public float maxHealth = 5;
-    float currentHealth;
+    public float maxHealth = 1;
+    private float currentHealth = 1 ;
     int currentTrash;
 
     // Start is called before the first frame update
     void Start()
     {
+        // hunger = new HealthBar();
         inventory = new Inventory();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentTrash= intitialTrash;
-        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class Controller : MonoBehaviour
     {
         currentTrash++;
         Debug.Log(currentTrash);
-        changeHealth(-1);
+        changeHealth(-0.15f);
     }
 
     public void addToInventory(Item item)
@@ -58,7 +58,11 @@ public class Controller : MonoBehaviour
 
     public void changeHealth(float change)
     {
-        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth);
+        Debug.Log(currentHealth);
+        currentHealth = currentHealth + change; //Mathf.Clamp(currentHealth + change, 0, maxHealth);
+        Debug.Log(currentHealth);
+        Debug.Log("Tities");
+        HealthBar.instance.SetValue(currentHealth);
         Debug.Log(change);
         Debug.Log(currentHealth);
     }
