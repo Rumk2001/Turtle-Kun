@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private string name;
+    public string name;
     private int id;
     private int type;
     private float damage;

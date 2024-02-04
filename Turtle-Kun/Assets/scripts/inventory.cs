@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class Inventory 
 {
+    
     private int maxSpace;
+    //Dictionary<int,Item,int>
     Dictionary<Item,int> items;
      
     public Inventory(int maxSpace = 5)
     {
         this.maxSpace = maxSpace;
-        this.items = new Dictionary<Item,int>();
+        items = new Dictionary<Item,int>();
     }
+
     public void removeItems(Item itemToRemove)
     {
         int value = 0;
@@ -26,6 +29,11 @@ public class Inventory
         else
           items.Remove(itemToRemove);
         
+    }
+    public Item GetItem(int i)
+    {
+        
+        return null;
     }
     public void add(Item itemToAdd)
     {
