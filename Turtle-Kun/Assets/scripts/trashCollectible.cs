@@ -6,7 +6,6 @@ public class trashCollectible : MonoBehaviour
 {
 
     Controller controller;
-    GameObject gameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,7 @@ public class trashCollectible : MonoBehaviour
             if (controller != null)
             {
                 controller.consumeTrash();
-                Debug.Log(gameObject.name);
+                Debug.Log(gameObject);
                 Destroy(gameObject);
             }
 
@@ -33,7 +32,6 @@ public class trashCollectible : MonoBehaviour
             if (controller != null)
             {
                 controller.incrementTrash();
-                Debug.Log(gameObject.name);
                 controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass",2));
             }
         }
