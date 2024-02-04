@@ -6,7 +6,7 @@ public class trashCollectible : MonoBehaviour
 {
 
     Controller controller;
-    GameObject gameObject;
+
     // Start is called before the first frame update
     void Start()
     {
