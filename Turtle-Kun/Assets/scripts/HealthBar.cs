@@ -20,9 +20,7 @@ public class HealthBar : MonoBehaviour
     {
         Debug.Log("Awake");
         instance = this;
-        // Timer mytimer = new Timer(2000);
-        // mytimer.Elapsed += (sender, e) => SetValue(change);
-        // mytimer.Enabled = true;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,6 @@ public class HealthBar : MonoBehaviour
 
     public void SetValue(float value)
     {
-        Debug.Log(value);
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * value);
     }
 
@@ -48,6 +45,7 @@ public class HealthBar : MonoBehaviour
     }
     public float timer()
     {
+        Debug.Log("HEre is no where");
         return 0.1f;
     }
 }
