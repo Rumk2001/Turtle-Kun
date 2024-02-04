@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    Inventory inventory;
+
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
+    public int maxInventorySpace = 5;
     public int intitialTrash = 0;
+    public int maxHealth = 5;
+    int currentHealth;
     int currentTrash;
 
     // Start is called before the first frame update
@@ -15,6 +20,7 @@ public class Controller : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentTrash= intitialTrash;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -36,6 +42,19 @@ public class Controller : MonoBehaviour
     public void incrementTrash()
     {
         currentTrash++;
+        Debug.Log(currentTrash);
+        changeHealth(-1);
     }
+
+    public void changeHealth(int change)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth);
+        Debug.Log(change);
+        Debug.Log(currentHealth);
+    }
+    public void addToInventory()
+
+    { }
+
 }
 
