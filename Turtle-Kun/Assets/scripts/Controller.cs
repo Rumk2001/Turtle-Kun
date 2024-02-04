@@ -59,9 +59,7 @@ public class Controller : MonoBehaviour
     public void changeHealth(float change)
     {
         Debug.Log(currentHealth);
-        currentHealth = currentHealth + change; //Mathf.Clamp(currentHealth + change, 0, maxHealth);
-        Debug.Log(currentHealth);
-        Debug.Log("Tities");
+        currentHealth = currentHealth + change;
         HealthBar.instance.SetValue(currentHealth);
         Debug.Log(change);
         Debug.Log(currentHealth);
