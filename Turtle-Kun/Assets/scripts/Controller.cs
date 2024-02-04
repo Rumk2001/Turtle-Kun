@@ -11,13 +11,14 @@ public class Controller : MonoBehaviour
     float vertical;
     public int maxInventorySpace = 5;
     public int intitialTrash = 0;
-    public int maxHealth = 5;
-    int currentHealth;
+    public float maxHealth = 5;
+    float currentHealth;
     int currentTrash;
 
     // Start is called before the first frame update
     void Start()
     {
+        inventory = new Inventory();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentTrash= intitialTrash;
         currentHealth = maxHealth;
@@ -46,15 +47,21 @@ public class Controller : MonoBehaviour
         changeHealth(-1);
     }
 
-    public void changeHealth(int change)
+    public void addToInventory(Item item)
+    {
+
+        Debug.Log(currentTrash);
+        Debug.Log(item);
+        inventory.add(item);
+        Debug.Log(inventory);
+    }
+
+    public void changeHealth(float change)
     {
         currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth);
         Debug.Log(change);
         Debug.Log(currentHealth);
     }
-    public void addToInventory()
-
-    { }
 
 }
 

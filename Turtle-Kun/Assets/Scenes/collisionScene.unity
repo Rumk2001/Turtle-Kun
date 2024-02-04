@@ -319,7 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0b410859ca8e446b2ffac8ed204ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxInventorySpace: 5
   intitialTrash: 0
+  maxHealth: 5
 --- !u!212 &1834735683
 SpriteRenderer:
   m_ObjectHideFlags: 0

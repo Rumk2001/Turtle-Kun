@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory 
 {
     private int maxSpace;
     Dictionary<Item,int> items;
@@ -21,6 +22,7 @@ public class Inventory : MonoBehaviour
             { items[itemToAdd]++; }
             else
                 items.Add(itemToAdd, 1);
+            Debug.Log(items.GetValueOrDefault(itemToAdd));
         }
         //TODO: send a message if inventory is full
         else { return; }
