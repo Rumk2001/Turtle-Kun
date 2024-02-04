@@ -4,17 +4,19 @@ using UnityEngine;
 
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class SceneGeneration : MonoBehaviour
 {
     // public GameObject objectToSpawn;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        // Odds for a specific type of plastic to spawn
         const float oddsSpawn = 0.25f;
         System.Random rnd = new System.Random();
 
         Vector3 screenVector, realWorldVector;
-        float x, y, xMin, yMin, xMax, yMax;
+        float xMin, yMin, xMax, yMax;
+        int x, y;
 
         // Calculates the real world max x y values at the limit of the screen
         screenVector = new Vector3(Screen.width, Screen.height, 0);
@@ -31,20 +33,22 @@ public class NewBehaviourScript : MonoBehaviour
         int nbItemType = 1; // To remove later
 
         for (int i = 0; i < nbItemType; i++)
-        {
+        {   
+            // If it passes the odds of spawning
             if (rnd.NextDouble() < oddsSpawn)
             {
-                GameObject newThing = (GameObject) Instantiate(Resources.Load("ItemPrefab" + i.ToString()))
+                // Creates a clone of a prefab
+                GameObject newThing = (GameObject)Instantiate(Resources.Load("ItemPrefab" + i.ToString()));
 
-                Debug.Log(x.ToString() + y.ToString());
-
-                x = rnd.Next(xMin + newThing.GetComponent<Renderer>().bounds.size.x / 2, xMax - newThing.GetComponent<Renderer>().bounds.size.x / 2);
-                y = rnd.Next(yMin + newThing.GetComponent<Renderer>().bounds.size.y / 2, yMax - newThing.GetComponent<Renderer>().bounds.size.y / 2);
+                // Random the position
+                x = rnd.Next((int) xMin + (int) newThing.GetComponent<Renderer>().bounds.size.x / 2, (int) xMax - (int) newThing.GetComponent<Renderer>().bounds.size.x / 2);
+                y = rnd.Next((int) yMin + (int) newThing.GetComponent<Renderer>().bounds.size.y / 2, (int) yMax - (int) newThing.GetComponent<Renderer>().bounds.size.y / 2);
 
                 Vector2 p;
                 p.x = x;
                 p.y = y;
 
+                // Updates profile
                 newThing.transform.position = p;
             }
         }
@@ -55,6 +59,11 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other);
     }
 
     /*
