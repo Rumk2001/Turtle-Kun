@@ -44,6 +44,10 @@ public class Controller : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
+    public void consumeFood()
+    {
+        changeHealth(45f);
+    }
     public void consumeTrash()
     {
         changeHealth(-0.15f);

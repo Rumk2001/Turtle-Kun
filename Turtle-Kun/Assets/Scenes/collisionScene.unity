@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 1873228059}
   - component: {fileID: 1873228061}
   - component: {fileID: 1873228062}
+  - component: {fileID: 1873228063}
   m_Layer: 0
   m_Name: Crushed_Can
   m_TagString: Untagged
@@ -529,6 +530,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f742dd684e5335e4ca1d619e76cdf1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1873228063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873228058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09dd9ad430685ad4ca332c48581aff24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
