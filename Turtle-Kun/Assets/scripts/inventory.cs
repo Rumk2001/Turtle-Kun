@@ -40,6 +40,18 @@ public class Inventory
         else { return; }
 
     }
+
+    public Boolean findItems(Item itemTofind, int quantity)
+    {
+        if (items.ContainsKey(itemTofind))
+        {
+            if (items[itemTofind] >= quantity)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void upgrade()
     {
         maxSpace=10;

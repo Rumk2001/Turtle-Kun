@@ -29,6 +29,8 @@ public static class itemCreator
             case 7:
                 return new Item(id, "Plastic Can", 0.75f, "This plastic can can't usually be recycled");
                 break;
+            case 8:
+                return new Item(id, "Reusable water bottle", 0f, "This is a reusable water bottle");
             default:
                 return null;
                 break;
