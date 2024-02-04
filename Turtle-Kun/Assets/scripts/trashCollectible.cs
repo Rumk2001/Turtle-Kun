@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class trashCollectible : MonoBehaviour
+{
+
+    Controller controller;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (controller != null)
+            {
+                controller.incrementTrash();
+                Destroy(gameObject);
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (controller != null)
+            {
+                controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass"));
+            }
+
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collided)
+    {
+        controller = collided.GetComponent<Controller>();
+    }
+    void OnTriggerExit2D(Collider2D collided)
+    {
+        controller = null;
+    }
+
+}
+
+
+
