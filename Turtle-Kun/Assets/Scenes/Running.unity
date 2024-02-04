@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 2114083317}
   - component: {fileID: 2114083316}
   m_Layer: 0
-  m_Name: 20240131_184056
+  m_Name: Bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

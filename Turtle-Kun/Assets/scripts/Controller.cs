@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour
     float horizontal;
     float vertical;
     public int maxInventorySpace = 5;
-    public int intitialTrash = 0;
+    //public int intitialTrash = 0;
     public float maxHealth = 1;
     private float currentHealth = 1 ;
     private int currentTrash;
@@ -44,16 +44,18 @@ public class Controller : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
-
+    public void consumeTrash()
+    {
+        changeHealth(-0.15f);
+    }
+    // Needed? 
     public void incrementTrash()
     {
         currentTrash++;
-        changeHealth(-0.15f);
     }
 
     public void addToInventory(Item item)
     {
-
         inventory.add(item);
     }
 

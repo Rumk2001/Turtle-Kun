@@ -20,7 +20,8 @@ public class trashCollectible : MonoBehaviour
         {
             if (controller != null)
             {
-                
+                controller.consumeTrash();
+                Debug.Log(gameObject.name);
                 Destroy(gameObject);
             }
 
@@ -31,9 +32,9 @@ public class trashCollectible : MonoBehaviour
             if (controller != null)
             {
                 controller.incrementTrash();
-                controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass"));
+                Debug.Log(gameObject.name);
+                controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass",2));
             }
-
         }
     }
     void OnTriggerEnter2D(Collider2D collided)

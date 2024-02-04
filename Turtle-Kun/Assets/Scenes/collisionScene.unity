@@ -320,7 +320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxInventorySpace: 5
-  intitialTrash: 0
   maxHealth: 5
 --- !u!212 &1834735683
 SpriteRenderer:
@@ -402,7 +401,7 @@ GameObject:
   - component: {fileID: 1873228061}
   - component: {fileID: 1873228062}
   m_Layer: 0
-  m_Name: 20240131_184056
+  m_Name: Crushed_Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
