@@ -19,12 +19,10 @@ public class Controller : MonoBehaviour
     private void Awake()
     {
         inventory = new Inventory();
-        Debug.Log("Awaken");
     }
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start");
         InventoryShelf.instance.hide();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentTrash= 0;
@@ -45,7 +43,7 @@ public class Controller : MonoBehaviour
             }
             else
             {
-                InventoryShelf.instance.show();
+                InventoryShelf.instance.show(inventory);
                 isShelfShowing = true;
             }
         }

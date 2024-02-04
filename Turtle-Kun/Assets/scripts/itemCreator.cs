@@ -11,25 +11,25 @@ public static class itemCreator
         switch (id)
         {
             case 1:
-                return new Item(id, "Plastic Bottle",0.05f, "This bottle made of PET (Polyethylene terephthalateis) can be recycled");
+                return new Item(id, "Plastic Bottle",0.05f, "This bottle made of PET (Polyethylene terephthalateis) can be recycled", 1);
                 break;
             case 2:
-                return new Item(id, "Plastic Milk Jug", 0.15f, "This plastic milk made of high density polyethylene jug can be recycled ");
+                return new Item(id, "Plastic Milk Jug", 0.15f, "This plastic milk made of high density polyethylene jug can be recycled ", 2);
                 break;
             case 3:
-                return new Item(id, "Plastic Fire Truck", 0.30f, "This fire truck made of PVC cannot be recycled");
+                return new Item(id, "Plastic Fire Truck", 0.30f, "This fire truck made of PVC cannot be recycled", 3);
                 break;
             case 4:
-                return new Item(id, "Plastic Bag", 0.45f, "This plastic bag made of low density polyethylene can sometimes be recycled");
+                return new Item(id, "Plastic Bag", 0.45f, "This plastic bag made of low density polyethylene can sometimes be recycled", 4);
                 break;
             case 5:
-                return new Item(id, "Plastic Straw", 0.55f, "These straws made of polypropylene can sometimes be recycled");
+                return new Item(id, "Plastic Straw", 0.55f, "These straws made of polypropylene can sometimes be recycled", 5);
                 break;
             case 6:
-                return new Item(id, "Plastic Coffee Cup", 0.69f, "This Styrofoam made of polystyrene can sometimes be recycled");
+                return new Item(id, "Plastic Coffee Cup", 0.69f, "This Styrofoam made of polystyrene can sometimes be recycled", 6);
                 break;
             case 7:
-                return new Item(id, "Plastic Can", 0.75f, "This plastic can can't usually be recycled");
+                return new Item(id, "Plastic Can", 0.75f, "This plastic can can't usually be recycled", 7);
                 break;
             default:
                 return null;
