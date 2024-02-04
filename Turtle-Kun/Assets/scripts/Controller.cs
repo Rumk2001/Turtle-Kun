@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Controller : MonoBehaviour
 {
+    Inventory inventory;
+
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
+    public int maxInventorySpace = 5;
+    public int intitialTrash = 0;
+    public float maxHealth = 5;
+    float currentHealth;
+    int currentTrash;
 
     // Start is called before the first frame update
     void Start()
     {
+        inventory = new Inventory();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        currentTrash= intitialTrash;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -29,5 +39,29 @@ public class NewBehaviourScript : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
+
+    public void incrementTrash()
+    {
+        currentTrash++;
+        Debug.Log(currentTrash);
+        changeHealth(-1);
+    }
+
+    public void addToInventory(Item item)
+    {
+
+        Debug.Log(currentTrash);
+        Debug.Log(item);
+        inventory.add(item);
+        Debug.Log(inventory);
+    }
+
+    public void changeHealth(float change)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + change, 0, maxHealth);
+        Debug.Log(change);
+        Debug.Log(currentHealth);
+    }
+
 }
 
