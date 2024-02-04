@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
     Inventory inventory;
-    // HealthBar hunger;
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
@@ -14,11 +14,12 @@ public class Controller : MonoBehaviour
     public float maxHealth = 1;
     private float currentHealth = 1 ;
     int currentTrash;
+    Timer mytimer = new Timer(2000);
+
 
     // Start is called before the first frame update
     void Start()
     {
-        // hunger = new HealthBar();
         inventory = new Inventory();
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentTrash= intitialTrash;
@@ -55,6 +56,7 @@ public class Controller : MonoBehaviour
     public void changeHealth(float change)
     {
         currentHealth = currentHealth + change; //Mathf.Clamp(currentHealth + change, 0, maxHealth);
+
         HealthBar.instance.SetValue(currentHealth);
     }
 

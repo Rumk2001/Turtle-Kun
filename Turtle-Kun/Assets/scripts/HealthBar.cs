@@ -19,9 +19,6 @@ public class HealthBar : MonoBehaviour
     void Awake()
     {
         instance = this;
-        // Timer mytimer = new Timer(2000);
-        // mytimer.Elapsed += (sender, e) => SetValue(change);
-        // mytimer.Enabled = true;
     }
     // Start is called before the first frame update
     void Start()
@@ -40,15 +37,11 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(timeRamining < 0)
-        {
-            timer();
-        }*/
         
     }
     public float timer()
     {
+        Debug.Log("HEre is no where");
         return 0.1f;
     }
 }
