@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class itemCreator
 {
+    public static int nbItemType = 7;
+
     public static Item CreatePlastic(int id)
     {
         switch (id)
