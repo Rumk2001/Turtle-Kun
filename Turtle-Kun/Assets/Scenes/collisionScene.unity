@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.0166125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -209,8 +209,8 @@ Transform:
   m_GameObject: {fileID: 673895135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.03, z: -10}
+  m_LocalScale: {x: 1, y: 1.9575001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxInventorySpace: 5
+  isShelfShowing: 0
   maxHealth: 5
 --- !u!212 &1834735683
 SpriteRenderer:
@@ -400,7 +401,6 @@ GameObject:
   - component: {fileID: 1873228059}
   - component: {fileID: 1873228061}
   - component: {fileID: 1873228062}
-  - component: {fileID: 1873228063}
   m_Layer: 0
   m_Name: Crushed_Can
   m_TagString: Untagged
@@ -530,18 +530,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f742dd684e5335e4ca1d619e76cdf1ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1873228063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873228058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09dd9ad430685ad4ca332c48581aff24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

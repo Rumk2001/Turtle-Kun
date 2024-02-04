@@ -6,7 +6,6 @@ using TMPro;
 public class InventoryShelf : MonoBehaviour
 {
     public GameObject shelf;
-    Inventory Inventory;
     public GameObject[] slots;
     public TextMeshProUGUI text;
     public static InventoryShelf instance { get; private set; }
@@ -30,7 +29,7 @@ public class InventoryShelf : MonoBehaviour
         
         shelf.SetActive(false);
     }
-    public void show()
+    public void show(Inventory inventory)
     {
         
         shelf.SetActive(true);
@@ -38,7 +37,7 @@ public class InventoryShelf : MonoBehaviour
         {
             if (slots[i] != null)
             {
-                slots[i].GetComponentInChildren<TextMeshProUGUI>().text = "4";
+                slots[i].GetComponentInChildren<TextMeshProUGUI>().text = $"{inventory.GetNumberOfItem(i+1)}";
             }
         }
     }
