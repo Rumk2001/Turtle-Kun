@@ -39,28 +39,26 @@ public class Controller : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
-
+    
     public void incrementTrash()
     {
         currentTrash++;
-        changeHealth(-0.15f);
+        //changeHealth(-0.15f);
     }
-
+    
     public void addToInventory(Item item)
     {
 
         inventory.add(item);
     }
-
+    /*
     public void changeHealth(float change)
     {
 
         currentHealth = currentHealth + change; //Mathf.Clamp(currentHealth + change, 0, maxHealth);
 
-        Debug.Log(currentHealth);
-        currentHealth = currentHealth + change;
         HealthBar.instance.SetValue(currentHealth);
     }
-
+    */
 }
 
