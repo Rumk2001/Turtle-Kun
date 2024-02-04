@@ -15,20 +15,22 @@ public class trashCollectible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // when E key is pressed the turtle eats the trash
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (controller != null)
             {
-                controller.incrementTrash();
+                
                 Destroy(gameObject);
             }
 
         }
-
+        // when F is pressed the turtle stores the trash in their inventory
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (controller != null)
             {
+                controller.incrementTrash();
                 controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass"));
             }
 
