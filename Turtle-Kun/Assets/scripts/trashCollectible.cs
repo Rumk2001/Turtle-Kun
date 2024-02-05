@@ -33,6 +33,7 @@ public class trashCollectible : MonoBehaviour
             {
                 controller.incrementTrash();
                 controller.addToInventory(new Item(0, "glass bottle", -5f, "unrecyclable glass",2));
+                Destroy(gameObject);
             }
         }
     
